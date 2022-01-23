@@ -1,0 +1,53 @@
+type Assign @entity {
+  id: ID!
+  to: Bytes! # address
+  punkIndex: BigInt! # uint256
+}
+
+type Transfer @entity {
+  id: ID!
+  from: Bytes! # address
+  to: Bytes! # address
+  value: BigInt! # uint256
+}
+
+type PunkTransfer @entity {
+  id: ID!
+  from: Bytes! # address
+  to: Bytes! # address
+  punkIndex: BigInt! # uint256
+}
+
+type PunkOffered @entity {
+  id: ID!
+  punkIndex: BigInt! # uint256
+  minValue: BigInt! # uint256
+  toAddress: Bytes! # address
+}
+
+type PunkBidEntered @entity {
+  id: ID!
+  punkIndex: BigInt! # uint256
+  value: BigInt! # uint256
+  fromAddress: Bytes! # address
+}
+
+type PunkBidWithdrawn @entity {
+  id: ID!
+  punkIndex: BigInt! # uint256
+  value: BigInt! # uint256
+  fromAddress: Bytes! # address
+}
+
+type PunkBought @entity {
+  id: ID!
+  punkIndex: BigInt! # uint256
+  value: BigInt! # uint256
+  fromAddress: Bytes! # address
+  toAddress: Bytes! # address
+}
+
+type PunkNoLongerForSale @entity {
+  id: ID!
+  punkIndex: BigInt! # uint256
+}
